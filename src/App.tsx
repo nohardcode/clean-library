@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'milligram';
+import * as React from 'react';
+import Books from "./components/Books";
+import BookStock from "./core/stock";
+import NewBook from "./components/NewBook";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  private stock = new BookStock();
+
+  public render() {
+    return (
+        <div>
+          <h1 className="App-title">My Books</h1>
+          <NewBook stock={this.stock}/>
+          <Books stock={this.stock}/>
+        </div>
+    );
+  }
 }
 
 export default App;
