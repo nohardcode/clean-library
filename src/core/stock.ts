@@ -12,7 +12,7 @@ export default class BookStock {
     this.getAllBooks();
   }
 
-  async addBookToCollection(bookDetails: any) {
+  addBookToCollection(bookDetails: any) {
     const book = new Book();
 
     book.title = bookDetails.title;
